@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Which KATSEYE Member Are You?</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&family=Anton&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#7dd3c0;--ink:#0d0d0d;--line:#c9465f;--card:#2fd8c2;--panel:#0f1b1a;--track:rgba(13,13,13,.14);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#7dd3c0;--ink:#0d0d0d}}
+:root[data-theme="dark"]{--bg:#7dd3c0;--ink:#0d0d0d}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Libre Caslon Text",Georgia,serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:520px;margin:0 auto;padding:18px 24px 56px}
+header{display:flex;align-items:center;justify-content:space-between;padding:6px 0 20px;border-bottom:1px solid var(--line)}
+header svg{width:30px;height:30px;stroke:var(--ink);fill:none;stroke-width:2;stroke-linecap:round}
+.logo{font-family:Anton,Impact,sans-serif;font-size:34px;letter-spacing:.5px;line-height:1}
+.icons{display:flex;gap:18px}
+.crumb{font-size:15px;margin:22px 0 26px}
+.crumb u{text-underline-offset:3px}
+.pill{display:inline-block;background:#fff;color:#111;border-radius:999px;padding:3px 13px;font-size:14px;margin-bottom:14px}
+h1{font-size:40px;line-height:1.08;margin:0 0 20px;text-transform:uppercase;font-weight:700;letter-spacing:-.5px}
+h2{font-size:25px;line-height:1.25;margin:0 0 24px;font-weight:700}
+p{margin:0 0 18px;font-size:18px}
+.btn{display:block;width:100%;background:transparent;color:var(--ink);border:1px solid var(--ink);border-radius:6px;padding:15px 18px;font:inherit;font-size:17px;text-align:left;margin-bottom:12px;cursor:pointer;transition:background .15s}
+.btn:hover,.btn:active{background:var(--ink);color:var(--bg)}
+.btn.c{text-align:center;margin-top:26px;text-transform:uppercase;letter-spacing:.5px}
+.top{display:flex;justify-content:space-between;font-size:15px;margin-bottom:10px}
+.bar{height:3px;background:var(--track);margin-bottom:30px}
+.bar i{display:block;height:100%;background:var(--ink);transition:width .35s}
+.tick{overflow:hidden;white-space:nowrap;border-bottom:1px solid var(--line);margin:0 -24px 26px;background:var(--ink);color:var(--bg)}
+.tk{display:inline-block;padding:7px 0;font-family:Anton,Impact,sans-serif;letter-spacing:2px;font-size:15px;animation:mq 22s linear infinite}
+.hero{position:relative;margin:0 0 30px;padding-top:10px}
+.hero .glow{width:300px;height:300px;margin:-150px 0 0 -150px;top:46%}
+.fan{position:relative;display:flex;justify-content:center;height:175px}
+.mc{width:96px;margin:0 -13px;transform:rotate(var(--r)) translateY(var(--y));animation:fl 4s ease-in-out infinite;animation-delay:var(--d)}
+.mc:nth-child(3){z-index:2}.mc:nth-child(2),.mc:nth-child(4){z-index:1}
+.mc svg{display:block;width:100%;height:auto;filter:drop-shadow(0 10px 12px rgba(0,0,0,.28))}
+.wild{position:relative;text-align:center;font-family:Anton,Impact,sans-serif;font-style:italic;font-size:96px;line-height:1;margin-top:-6px;color:transparent;-webkit-text-stroke:2px var(--ink);text-shadow:5px 5px 0 var(--line);letter-spacing:3px}
+.hero .spk{color:var(--line);text-shadow:0 0 8px rgba(255,255,255,.8)}
+.qhead{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.qbadge{position:relative;width:68px;height:68px;flex:none}
+.qbadge svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 14s linear infinite;filter:drop-shadow(0 0 10px rgba(255,255,255,.6))}
+.qbadge b{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:Anton,Impact,sans-serif;font-size:30px;color:#fff;font-weight:400}
+.qmeta{font-size:15px;line-height:1.3}.qmeta b{display:block;font-family:Anton,Impact,sans-serif;font-weight:400;letter-spacing:1.5px;font-size:18px}
+#q{position:relative}
+#qt{animation:up .4s both}
+@keyframes mq{to{transform:translateX(-50%)}}
+@keyframes fl{50%{translate:0 -9px}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hide{display:none}
+.rule{border:0;border-top:1px solid var(--line);margin:34px 0 26px}
+.cardwrap{position:relative;display:flex;justify-content:center;margin:10px 0 34px;padding:24px 0;perspective:900px}
+.glow{position:absolute;left:50%;top:50%;width:330px;height:330px;margin:-165px 0 0 -165px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.85) 0%,rgba(255,120,190,.45) 35%,rgba(47,216,194,0) 70%);filter:blur(22px);animation:pulse 3s ease-in-out infinite}
+.tilt{position:relative;transition:transform .15s ease-out;transform-style:preserve-3d;animation:pop 1s cubic-bezier(.2,1.2,.3,1) both}
+.float{position:relative;width:230px;animation:bob 4s ease-in-out infinite}
+.float svg{display:block;width:230px;height:auto;filter:drop-shadow(0 18px 26px rgba(0,0,0,.3)) drop-shadow(0 0 18px rgba(255,255,255,.55))}
+.shine{position:absolute;inset:0;border-radius:15px;pointer-events:none;mix-blend-mode:overlay;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.85) 44%,rgba(255,130,210,.5) 50%,rgba(120,255,240,.6) 56%,transparent 70%);background-size:260% 100%;animation:shine 3.4s ease-in-out infinite}
+.spk{position:absolute;font-size:22px;color:#fff;text-shadow:0 0 10px #fff;animation:tw 2.2s ease-in-out infinite;pointer-events:none}
+.s1{left:8%;top:14%}.s2{right:6%;top:30%;font-size:16px;animation-delay:.7s}.s3{left:14%;bottom:12%;font-size:14px;animation-delay:1.3s}.s4{right:12%;bottom:6%;animation-delay:.3s}
+.up{animation:up .7s both;animation-delay:.5s}.d1{animation-delay:.7s}.d2{animation-delay:.9s}
+#opts .btn{animation:up .4s both}
+#opts .btn:nth-child(2){animation-delay:.05s}#opts .btn:nth-child(3){animation-delay:.1s}#opts .btn:nth-child(4){animation-delay:.15s}#opts .btn:nth-child(5){animation-delay:.2s}
+.btn:hover{box-shadow:0 0 0 4px rgba(255,255,255,.35)}
+.row.w i{box-shadow:0 0 12px var(--line)}
+@keyframes pop{from{opacity:0;transform:scale(.5) rotateY(100deg)}to{opacity:1;transform:none}}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-10px) rotate(-1deg)}}
+@keyframes shine{0%{background-position:130% 0}60%,100%{background-position:-60% 0}}
+@keyframes pulse{0%,100%{opacity:.55;transform:scale(.92)}50%{opacity:1;transform:scale(1.08)}}
+@keyframes tw{0%,100%{opacity:.2;transform:scale(.6) rotate(0)}50%{opacity:1;transform:scale(1.2) rotate(30deg)}}
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.name{font-size:clamp(32px,11vw,58px);line-height:1;text-align:center;text-transform:uppercase;margin:0 0 6px;font-weight:700;letter-spacing:-1px}
+.tag{text-align:center;font-style:italic;margin-bottom:24px}
+h3{font-size:22px;margin:0 0 16px;text-transform:uppercase}
+.row{margin:0 0 16px}
+.row div{display:flex;justify-content:space-between;font-size:16px;margin-bottom:6px}
+.row span{display:block;height:8px;background:var(--track);border-radius:4px;overflow:hidden}
+.row i{display:block;height:100%;width:0;background:var(--ink);border-radius:4px;transition:width .9s cubic-bezier(.2,.8,.2,1)}
+.row.w i{background:var(--line)}
+.note{font-size:13px;opacity:.75;margin-top:28px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+ <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+ <div class="logo">KATSEYE</div>
+ <div class="icons"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M16 16l5 5"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.5 3.5-7 8-7s8 2.5 8 7"/></svg></div>
+</header>
+<div class="crumb"><u>Home</u> › WILD World Quiz</div>
+<div class="tick"><div class="tk"><span>WILD WORLD ✦ KATSEYE ✦ WHICH ONE ARE YOU? ✦ WILD WORLD ✦ KATSEYE ✦ WHICH ONE ARE YOU? ✦ </span><span>WILD WORLD ✦ KATSEYE ✦ WHICH ONE ARE YOU? ✦ WILD WORLD ✦ KATSEYE ✦ WHICH ONE ARE YOU? ✦ </span></div></div>
+
+<section id="start">
+<div class="hero"><div class="glow"></div><div class="spk" style="left:2%;top:6%">✦</div><div class="spk" style="right:3%;top:26%;font-size:15px;animation-delay:.8s">✦</div><div class="spk" style="left:10%;top:62%;font-size:14px;animation-delay:1.4s">✦</div><div class="fan" id="fan"></div><div class="wild">WILD</div></div>
+<div class="pill">Fan Quiz</div>
+<h1>Which KATSEYE member are you?</h1>
+<p>Ten questions about your instincts, fears, values and what drives you. No “right” answers. Pick what feels most like you.</p>
+<button class="btn c" onclick="go()">Start the quiz</button>
+</section>
+
+<section id="q" class="hide">
+<div class="spk" style="right:2px;top:0">✦</div><div class="spk" style="right:34px;top:34px;font-size:13px;animation-delay:.9s">✦</div>
+<div class="qhead"><div class="qbadge"><svg id="qb" viewBox="-50 -50 100 100"></svg><b id="qn">1</b></div><div class="qmeta"><b>WILD WORLD</b><span id="cnt"></span></div></div>
+<div class="bar"><i id="pb"></i></div>
+<h2 id="qt"></h2>
+<div id="opts"></div>
+</section>
+
+<section id="r" class="hide"></section>
+</div>
+
+<script>
+const M=[
+{n:"Daniela",tag:"The Spark",t:"You lead with presence. You read a room, raise its energy, and make decisions fast and out loud. Crowds fuel you, and you would rather be bold and memorable than careful and forgotten."},
+{n:"Lara",tag:"The Free Spirit",t:"You connect through humor, honesty and instinct. You resist being put in a box, read people with ease, and win rooms by being real. Your creativity shows up in the unexpected third option."},
+{n:"Megan",tag:"The Perfectionist",t:"You are driven by craft. You set the highest standard, then outwork it. Repetition does not bore you, it sharpens you, and your confidence is earned in the details nobody else sees."},
+{n:"Sophia",tag:"The Composed One",t:"You are graceful under pressure. You choose carefully, value taste and intention, and keep the peace without losing your point of view. Calm is not softness for you, it is control."},
+{n:"Yoonchae",tag:"The Quiet Force",t:"You are introspective and fiercely focused. You observe first, speak when it counts, and grow in private before you show it. Your depth is your strength, and it hits harder for being unannounced."}
+];
+// options order: Daniela, Lara, Megan, Sophia, Yoonchae  → [text, primary, secondary]
+const Q=[
+["You have a free hour and no obligations. What do you reach for?",[["Music turned up loud and a dance break",0,1],["Exploring or making something with no plan",1,4],["Practicing a skill I want to master",2,0],["Setting up a calm, pretty space to unwind",3,4],["A show, a book, or just my own thoughts",4,3]]],
+["What is your deepest fear on this journey?",[["Fading into the background and being forgotten",0,2],["Losing my authentic self to fit in",1,4],["Falling short of what I know I am capable of",2,3],["Losing my composure or integrity when it matters most",3,2],["Never finding my voice, or speaking up too late",4,1]]],
+["Which compliment would mean the most to you?",[["“You light up everything”",0,1],["“You’re so original”",1,4],["“You’re incredibly talented”",2,0],["“You have such good taste”",3,4],["“You’re deeper than I expected”",4,3]]],
+["What do you need most in order to feel at your best?",[["Energy and attention",0,2],["Freedom to be completely myself",1,4],["A clear goal and a real challenge",2,0],["Order, calm, and intention",3,4],["Solitude and time to think",4,3]]],
+["Which inner conflict sounds most like you?",[["“I want to be seen, and I want it to be unforgettable”",0,1],["“I want to be free, but I also want to be taken seriously”",1,2],["“I want to be perfect, but I know perfect does not exist”",2,3],["“I seem easygoing, but I hold myself to a very high standard”",3,2],["“I want to speak up, but I trust my actions more than my words”",4,2]]],
+["When you look back at past versions of yourself, you feel…",[["Pride that I took big risks",0,2],["Amusement at how much I have changed",1,4],["A wish that I had pushed even harder",2,0],["Gratitude for the grace I learned along the way",3,4],["Quiet respect for how much I grew in private",4,3]]],
+["You feel creatively stuck. What do you do?",[["Move, make noise, change the energy",0,2],["Switch things up and try something weird",1,4],["Keep working until it clicks",2,3],["Step back, tidy up, and reset",3,4],["Take time alone and let ideas come",4,3]]],
+["Which kind of strength do you admire most?",[["The courage to take up space",0,2],["Authenticity that never apologizes",1,4],["A relentless work ethic",2,0],["Poise under pressure",3,4],["Quiet resilience",4,3]]],
+["What do you do when you start doubting yourself?",[["Hype myself up and step forward anyway",0,2],["Make light of it and trust my instincts",1,4],["Outwork the doubt with more practice",2,0],["Slow down, breathe, and return to my standards",3,4],["Go quiet, reflect, and rebuild from within",4,3]]],
+["Pick a motto.",[["“Take up space.”",0,2],["“Don’t take it all so seriously.”",1,4],["“Do it again, but better.”",2,3],["“Stay graceful under pressure.”",3,4],["“Keep your head down and keep growing.”",4,2]]]
+];
+const SYM=[
+'<path d="M0-11L3-3L11 0L3 3L0 11L-3 3L-11 0L-3-3Z" fill="#0d0d0d"/>',
+'<path d="M0 12V-2M0-2C-6-9-11-7-13-3M0-2C6-9 11-7 13-3M0-2C-3-11 3-12 0-12M0-2C-8-4-10 2-12 4M0-2C8-4 10 2 12 4" fill="none" stroke="#0d0d0d" stroke-width="2" stroke-linecap="round"/>',
+'<path d="M-4-10C-1-4 1-2 6-10M-4-10C-6-2-6 2-6 5M6-10C6-2 7 1 7 5" fill="none" stroke="#0d0d0d" stroke-width="1.6"/><circle cx="-6" cy="8" r="5" fill="#0d0d0d"/><circle cx="7" cy="8" r="5" fill="#0d0d0d"/>',
+'<g fill="none" stroke="#0d0d0d" stroke-width="2" stroke-linecap="round"><circle cx="0" cy="-8" r="3"/><path d="M0-5V11M-5-1H5M-10 3C-9 10-4 12 0 11C4 12 9 10 10 3"/></g>',
+'<path d="M0-12C8-4 12 0 12 4C12 9 6 10 3 7C4 11 5 12 6 13H-6C-5 12-4 11-3 7C-6 10-12 9-12 4C-12 0-8-4 0-12Z" fill="#0d0d0d"/>'
+];
+const SIG=["Daniela","Lara","Megan","Sophia","Yoonchae"];
+function card(k){return '<svg viewBox="0 0 220 340" xmlns="http://www.w3.org/2000/svg"><rect width="220" height="340" rx="14" fill="var(--card)"/><text x="18" y="30" font-family="Libre Caslon Text,Georgia,serif" font-size="13" fill="#0d0d0d" letter-spacing="1">'+M[k].n.toUpperCase()+'</text><g transform="translate(192 24)">'+SYM[k]+'</g><rect x="14" y="48" width="192" height="222" rx="8" fill="var(--panel)"/><circle cx="110" cy="150" r="70" fill="none" stroke="var(--card)" stroke-opacity=".25"/><circle cx="110" cy="150" r="44" fill="none" stroke="var(--card)" stroke-opacity=".4"/><g transform="translate(110 150) scale(3)" opacity=".95" style="color:var(--card)"><g transform="scale(1)">'+SYM[k].replace(/#0d0d0d/g,"#2fd8c2")+'</g></g><text x="110" y="248" text-anchor="middle" font-family="Mrs Saint Delafield,cursive" font-size="44" fill="#fff">'+SIG[k]+'</text><text x="110" y="316" text-anchor="middle" font-family="Anton,Impact,sans-serif" font-size="40" font-style="italic" fill="#0d0d0d" letter-spacing="2">WILD</text></svg>'}
+let i=0,sc,pr;
+const $=id=>document.getElementById(id);
+function go(){i=0;sc=[0,0,0,0,0];pr=[0,0,0,0,0];$("start").classList.add("hide");$("r").classList.add("hide");$("q").classList.remove("hide");show();scrollTo(0,0)}
+function show(){
+ const [t,o]=Q[i];
+ $("cnt").textContent="Question "+(i+1)+" / "+Q.length;$("qn").textContent=i+1;$("qt").style.animation="none";void $("qt").offsetWidth;$("qt").style.animation="";
+ $("pb").style.width=(i/Q.length*100)+"%";
+ $("qt").textContent=t;
+ $("opts").innerHTML="";
+ o.map(x=>x).sort(()=>Math.random()-.5).forEach(x=>{const b=document.createElement("button");b.className="btn";b.textContent=x[0];b.onclick=()=>{sc[x[1]]+=3;sc[x[2]]+=1;pr[x[1]]++;i++;i<Q.length?show():finish()};$("opts").appendChild(b)});
+}
+function finish(){
+ $("q").classList.add("hide");$("r").classList.remove("hide");
+ const tot=sc.reduce((a,b)=>a+b,0);
+ const rnd=[0,1,2,3,4].map(()=>Math.random());
+ const order=[0,1,2,3,4].sort((a,b)=>sc[b]-sc[a]||pr[b]-pr[a]||rnd[b]-rnd[a]);
+ const w=order[0];
+ let h='<div class="pill">Your result</div><div class="cardwrap"><div class="glow"></div><div class="spk s1">✦</div><div class="spk s2">✦</div><div class="spk s3">✦</div><div class="spk s4">✦</div><div class="tilt"><div class="float">'+card(w)+'<div class="shine"></div></div></div></div><div class="name up">'+M[w].n+'</div><div class="tag up d1">'+M[w].tag+'</div><p class="up d2">'+M[w].t+'</p><hr class="rule"><h3>Your blend</h3>';
+ order.forEach((k,j)=>{const p=Math.round(sc[k]/tot*100);h+='<div class="row'+(j==0?' w':'')+'"><div><span style="all:unset">'+M[k].n+'</span><span style="all:unset">'+p+'%</span></div><span><i data-w="'+p+'"></i></span></div>'});
+ h+='<p style="font-size:15px">Second closest: <b>'+M[order[1]].n+'</b></p><button class="btn c" onclick="go()">Retake the quiz</button><p class="note">Unofficial fan quiz. Not affiliated with HYBE, Geffen, or KATSEYE.</p>';
+ $("r").innerHTML=h;scrollTo(0,0);
+ const cw=document.querySelector(".cardwrap"),tl=document.querySelector(".tilt");
+ cw.addEventListener("pointermove",e=>{const r=cw.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;tl.style.animation="none";tl.style.transform="rotateY("+x*30+"deg) rotateX("+(-y*30)+"deg)"});
+ cw.addEventListener("pointerleave",()=>{tl.style.transform=""});
+ setTimeout(()=>document.querySelectorAll(".row i").forEach(e=>e.style.width=e.dataset.w+"%"),80);
+}
+
+(function(){let pts=[];for(let k=0;k<28;k++){const r=k%2?36:47,a=k*Math.PI/14;pts.push((r*Math.cos(a)).toFixed(1)+","+(r*Math.sin(a)).toFixed(1))}
+$("qb").innerHTML='<polygon points="'+pts.join(" ")+'" fill="var(--line)"/>';
+const R=[-14,-7,0,7,14],Y=[16,5,0,5,16];
+$("fan").innerHTML=[0,1,2,3,4].map(k=>'<div class="mc" style="--r:'+R[k]+'deg;--y:'+Y[k]+'px;--d:'+(k*.35)+'s">'+card(k)+'</div>').join("");})();
+</script>
+</body>
+</html>
